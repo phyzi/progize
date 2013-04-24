@@ -5,6 +5,7 @@ namespace proGize\UserManagementBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 use proGize\UserManagementBundle\Form\Type\RegistrationType;
 use proGize\UserManagementBundle\Form\Type\LoginType;
@@ -33,8 +34,7 @@ class AccountController extends Controller
     {        
         $user = new Userlogin;
 
-        $loginform = $this->createForm(new LoginType(),
-                                        $user);
+        $loginform = $this->createForm(new LoginType(), $user);
 
         if ($request->isMethod('POST')) {
             $loginform->bind($request);
@@ -42,17 +42,28 @@ class AccountController extends Controller
             if ($loginform->isValid()) {
                 $login = $loginform->getData();
 
-                $username1 = $this->getDoctrine()
+                $username = $this->getDoctrine()
                     ->getRepository('proGizeUserManagementBundle:User')
-                    ->findOneByUsername($login->getUsername());
+                    ->findOneBy( array('username' => $login->getUsername()) );
 
-                if (!$username1)
-                    return $this->redirect('http://www.notuserna.me');
+                $password = $this->getDoctrine()
+                    ->getRepository('proGizeUserManagementBundle:User')
+                    ->findOneBy( array('password' => $login->getPassword()) );
 
-                return $this->redirect('http://www.userna.me');
+                if (!$username) {
+                    throw $this->createNotFoundException('Username '.$login->getUsername().' not found. That sucks.');
+                } elseif (!$password) {
+                    throw $this->createNotFoundException('Wrong password. That sucks.');
+                } else {
+                    //logged in
+                return $this->redirect($this->generateUrl('progize_user_control_panel'));
+                    $session = new Session();
+                    $session->start();
+                    $session->set('name', $login->getUsername() );
+                }
             }
 
-            return $this->redirect('http://www.notval.id');
+            throw $this->createNotFoundException('Now thats weird. I think you didn\'t fill the form correctly.');
         }
 
         return $this->render('proGizeWelcomeBundle:Welcome:init.html.twig');

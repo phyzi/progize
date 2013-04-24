@@ -1,0 +1,15 @@
+progize_login:
+    pattern: /
+    defaults: { _controller: proGizeUserManagementBundle:Account:new }
+
+progize_login_user:
+    pattern:  /logindone
+    defaults: { _controller: proGizeUserManagementBundle:Account:login }
+
+progize_create_user:
+    pattern:  /create
+    defaults: { _controller: proGizeUserManagementBundle:Account:create }
+
+progize_user_control_panel:
+    pattern:  /user
+    defaults: { _controller: proGizeUserManagementBundle:ControlPanel:init }

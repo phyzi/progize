@@ -7,13 +7,5 @@ progize_featured_projects:
     defaults : {_controller: proGizeWelcomeBundle:Featured:init }
 
 progize_login:
-    pattern:  /login
-    defaults: { _controller: proGizeUserManagementBundle:Account:new }
-
-progize_login_user:
-    pattern:  /logindone
-    defaults: { _controller: proGizeUserManagementBundle:Account:login }
-
-progize_create_user:
-    pattern:  /create
-    defaults: { _controller: proGizeUserManagementBundle:Account:create }
+    prefix:  /login
+    resource: "@proGizeUserManagementBundle/Resources/config/routing.yml"
