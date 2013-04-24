@@ -1,0 +1,3 @@
+proGize_welcome:
+    prefix:   /proGize
+    resource: "@proGizeWelcomeBundle/Resources/config/routing.yml"

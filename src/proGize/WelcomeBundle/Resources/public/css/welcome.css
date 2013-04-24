@@ -1,0 +1,156 @@
+body {
+	background-color: #39312D;
+}
+
+#logo {
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+
+	margin: -440px 0 0 -235px;
+}
+
+#wrapper {
+    position: absolute;
+
+	width: 1024px;
+	height: 576px;
+
+    left: 50%;
+    top: 50%;
+    margin: -305px 0 0 -527px;
+
+    padding: 30px;
+
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;	
+	border-radius: 5px;
+
+	background-color: #D26F3D;
+}
+
+#wrapper a {
+	text-decoration: none;
+}
+
+#wrapper a:visited {
+	text-decoration: none;
+}
+
+/* title big box */
+#wrapper h1 {
+	position: absolute;
+	color: #fff;
+	font-size: 40pt;
+
+	bottom: 15px;	
+}
+
+/* title small box */
+#wrapper h2 {
+	position: absolute;
+	color: #fff;
+	font-size: 27pt;
+
+	bottom: 15px;
+}
+
+/* subtitle big box */
+#wrapper h5 {
+	position: absolute;
+	color: #eee;
+	font-size: 20pt;
+	font-family: 'Ruda', sans-serif;
+
+	bottom: 58pt;
+}
+
+/* subtitle small box */
+#wrapper h6 {
+	position: absolute;
+	color: #eee;
+	font-size: 14pt;
+	font-family: 'Ruda', sans-serif;
+
+	bottom: 38pt;	
+}
+
+#featured_projects {
+	position: relative;
+
+	width: 1014px;
+	height: 340px;
+
+	padding-top: 10px;
+	padding-left: 10px;
+
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+
+	float: left;
+
+	background-color: #6DAB73;
+}
+
+#create_project {
+	position: relative;
+
+	width: 300px;
+	height: 187px;
+
+	padding-top: 10px;
+	padding-left: 10px;
+
+	margin-top: 30px;
+
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-left-radius: 5px;
+
+	float: left;
+
+	background-color: #68A26D;
+}
+
+#action_1 {
+	position: relative;
+
+	width: 300px;
+	height: 187px;
+
+	padding-top: 10px;
+	padding-left: 10px;
+
+	margin-top: 30px;
+	margin-left: 15px;
+
+	float: left;
+
+	background-color: #80C887;
+}
+
+#user_menu {
+	position: relative;
+
+	width: 364px;
+	height: 187px;
+
+	padding-top: 10px;
+	padding-left: 10px;
+
+	margin-top: 30px;
+	margin-left: 15px;
+
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-bottom-right-radius: 5px;
+
+	float: left;
+
+	background-color: #90E198;
+}

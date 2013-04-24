@@ -1,0 +1,215 @@
+body {
+	background-color: #39312D;
+}
+
+input[type=text], input[type=password] {
+	padding: 7px;
+
+	font-size: 11pt;
+
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+
+	border: none;
+
+	color: #39312D;
+
+	background-color: #6BAA72;
+}
+
+#_cutleft {
+	position: relative;
+
+	width: 30px;
+	height: 320px;
+
+	left: 50%;
+
+	margin-left: -280px;
+
+	-webkit-border-top-right-radius: 30px;
+	-moz-border-radius-topright: 30px;
+	border-top-right-radius: 30px;
+
+	background-color: #39312D;
+
+	float: left;
+
+	z-index: 2;
+}
+
+#_cutright {
+	position: relative;
+
+	width: 30px;
+	height: 320px;
+
+	left: 50%;
+
+	margin-left: -30px;
+
+	-webkit-border-top-left-radius: 30px;
+	-moz-border-radius-topleft: 30px;
+	border-top-left-radius: 30px;
+
+	background-color: #39312D;
+
+	float: left;
+
+	z-index: 2;
+}
+
+#logo {
+	position: absolute;
+	left: 50%;
+
+	margin: 317px 0px 0px -235px
+}
+
+#wrapper_foot {
+	position: absolute;
+
+	width: 500px;
+	height: 30px;
+
+	left: 50%;
+
+	margin-top: 290px;
+	margin-left: -250px;
+
+	-webkit-border-bottom-right-radius: 30px;
+	-webkit-border-bottom-left-radius: 30px;
+	-moz-border-radius-bottomright: 30px;
+	-moz-border-radius-bottomleft: 30px;
+	border-bottom-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+
+	background-color: #D26F3D;
+}
+
+#wrapper {
+	position: relative;
+
+	width: 440px;
+	height: 210px;
+
+	left: 50%;
+
+	margin-left: -280px;
+
+	padding: 40px 60px 40px 60px;
+
+	-webkit-border-bottom-right-radius: 30px;
+	-webkit-border-bottom-left-radius: 30px;
+	-moz-border-radius-bottomright: 30px;
+	-moz-border-radius-bottomleft: 30px;
+	border-bottom-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+
+	line-height: 2em;
+
+	background-color: #D26F3D;
+
+	z-index: 1;
+
+	float: left;
+
+	overflow: visible;
+}
+
+#wrapper input[type=text], #wrapper input[type=password] {
+	width: 430px;
+}
+
+#logindescription {
+	margin-top: -1.2em;
+
+	font-size: 15pt;
+}
+
+#loginbutton {
+	position: relative;
+	margin-top: 10px;
+}
+
+#registerbutton {
+	position: relative;
+}
+
+#sendregistration {
+	position: relative;
+	margin-top: 20px;
+}
+
+
+#_corner1 {
+	position: absolute;
+
+	width: 30px;
+	height: 60px;
+
+	margin-top: 270px;
+	margin-left: -60px;
+
+	background-color: #D26F3D;
+
+	display: none;
+}
+
+#_corner2 {
+	position: absolute;
+
+	width: 30px;
+	height: 30px;
+
+	margin-top: 300px;
+	margin-left: -60px;
+
+	-webkit-border-top-right-radius: 30px;
+	-moz-border-radius-topright: 30px;
+	border-top-right-radius: 30px;
+
+	background-color: #39312D;
+
+	display: block;
+}
+
+#wrap_register {
+	position: absolute;
+
+	width: 320px;
+	height: 460px;
+
+	left: 50%;
+
+	margin-left: 250px;
+
+	padding: 20px 30px 20px 30px;
+
+	-webkit-border-bottom-right-radius: 30px;
+	-webkit-border-bottom-left-radius: 30px;
+	-moz-border-radius-bottomright: 30px;
+	-moz-border-radius-bottomleft: 30px;
+	border-bottom-right-radius: 30px;
+	border-bottom-left-radius: 30px;
+
+	line-height: 2em;
+
+	background-color: #D26F3D;
+
+	overflow: visible;
+
+	z-index: 5;
+
+	display: none;
+}
+
+#wrap_register input[type=text], #wrap_register input[type=password] {
+	width: 300px;
+}
+
+#wrap_register li {
+	font-size: 10pt;
+	color: #80B285;
+}

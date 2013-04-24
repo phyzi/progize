@@ -1,0 +1,46 @@
+{% extends 'proGizeWelcomeBundle::default.html.twig' %}
+
+{% block styles %}
+
+	<link href="{{ asset('bundles/progizewelcome/css/welcome.css') }}" rel="stylesheet" type="text/css" />
+	{{ parent() }}
+
+{% endblock %}
+
+{% block body %}
+	<a href="{{ path('progize_welcome_homepage') }}">
+		<div class="logo" id="logo"></div>
+	</a>
+
+
+	<div id="wrapper">
+		<a href="{{ path('progize_featured_projects') }}">
+			<div id="featured_projects">
+				<h5 class="subtitle">Check out these cool projects!</h5>
+				<h1 class="title">Currently featured projects</h1>
+			</div>
+		</a>
+
+		<a href="">
+			<div id="create_project">
+				<h6 class="subtitle">Creating your own projects is simple!</h6>
+				<h2 class="title">Create a project</h2>
+			</div>
+		</a>
+
+		<a href="">
+			<div id="action_1">
+				<h6 class="subtitle">action_1</h6>
+				<h2 class="title">Action_1</h2>
+			</div>
+		</a>
+
+		<a href="{{ path('progize_login') }}">
+			<div id="user_menu">
+				<h6 class="subtitle">Log in or register to get all the action!</h6>
+				<h2 class="title">Log In</h2>
+			</div>
+		</a>
+	</div>
+
+{% endblock %}

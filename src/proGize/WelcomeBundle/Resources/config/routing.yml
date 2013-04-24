@@ -1,0 +1,19 @@
+progize_welcome_homepage:
+    pattern:  /
+    defaults: { _controller: proGizeWelcomeBundle:Welcome:init }
+
+progize_featured_projects:
+    pattern: /featured
+    defaults : {_controller: proGizeWelcomeBundle:Featured:init }
+
+progize_login:
+    pattern:  /login
+    defaults: { _controller: proGizeUserManagementBundle:Account:new }
+
+progize_login_user:
+    pattern:  /logindone
+    defaults: { _controller: proGizeUserManagementBundle:Account:login }
+
+progize_create_user:
+    pattern:  /create
+    defaults: { _controller: proGizeUserManagementBundle:Account:create }

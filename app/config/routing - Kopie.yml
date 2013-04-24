@@ -1,0 +1,7 @@
+proGize_welcome:
+    prefix:   /proGize
+    resource: "@proGizeWelcomeBundle/Resources/config/routing.yml"
+
+acme_account:
+    prefix: /account
+    resource: "@AcmeAccountBundle/Resources/config/routing.yml"
