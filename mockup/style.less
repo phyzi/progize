@@ -1,28 +1,53 @@
-@color_bg: #f9f2e7;
-@color_hlmain_dark: #00abc6;
-@color_hlmain_light: #40c0cb;
-@color_hlscnd_dark: #8fbe00;
-@color_hlscnd_light: #aee239;
+/* Include Reset & General Files */
+@import url("http://www.viwid.com/config/reset.css");
+@import url("http://www.viwid.com/config/general.css");
 
+/* colors */
+@color_bg: #f9f2e7;
+@color_hl_main: #00abc6;
+@color_hl_scnd: #8fbe00;
+@shade_step: 4.5%;
+
+.highlight(@highlight_color, @shade_step_count) {
+	background-color: @highlight_color+@shade_step_count*@shade_step;
+}
+/* global */
 body {
 	background-color: @color_bg;
 }
 
-.hlmain_dark {
-	background-color: @color_hlmain_dark;
+/* structure */
+#header {
+	padding-top: 2em;
 }
-.hlmain_light {
-	background-color: @color_hlmain_light;
-}
-.hlscnd_dark {
-	background-color: @color_hlscnd_dark;
-}
-.hlscnd_light {
-	background-color: @color_hlscnd_light;
-}
-
-.color_test_container {
-	width: 200px;
-	height: 200px;
-	float: left;
-}
+	#master_nav_container {
+		width: 30em;
+		height: 20em;
+		float: left;
+		.item {
+			width: 100%;
+			position: relative;
+			&.i_0 {
+				background-color: lighten(@color_hl_main, @shade_step*0);
+				height: 50%
+			}
+			&.i_1 {
+				background-color: lighten(@color_hl_main, @shade_step*1);
+				height: 24%;
+			}
+			&.i_2 {
+				background-color: lighten(@color_hl_main, @shade_step*2);
+				height: 12%;
+			}
+		}
+			.item_text {
+				position: absolute;
+				top: 50%;
+				margin-top: -0.5em;	
+				width: 100%;
+				text-align: center;
+				font-size: 5em;
+				color: @color_bg;
+				font-weight: bold;
+			}
+	}
