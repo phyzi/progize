@@ -1,3 +1,8 @@
+<?php 
+	//we need the form helper
+	$this->load->helper('form');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,11 +15,25 @@
 	diz is da mane page.
 	<br />
 
-	<form action="<?php echo site_url('checklogin/checklogin') ?>">
-		Username: <input type="text" name="username"><br>
-		Password: <input type="password" name="password"><br />
-		<input type="submit" value="LOG ME IN DUDE" />
-	</form>
+	<?php
+		echo form_open('user_handling/login');
+			echo 'username' . form_input('username', 'dontlookatme');
+			echo 'password' . form_password('password', '');
+			echo form_submit('login', 'Log me in!');
+		echo form_close();
+	?>
+
+	<p>Register:</p>
+
+	<?php
+		echo form_open('user_handling/register');
+			echo 'username' . form_input('username', '');
+			echo 'email' . form_input('email', '');
+			echo 'password' . form_password('password', '');
+			echo 'repeat' . form_password('password_r', '');
+			echo form_submit('register', 'register!');
+		echo form_close();
+	?>
 </div>
 
 </body>
