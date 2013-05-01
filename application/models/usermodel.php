@@ -15,8 +15,8 @@ class Usermodel extends CI_Model {
 					         id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 					         username VARCHAR(20) NOT NULL,
 					         email varchar(30) NOT NULL,
-					         password varchar(15) NOT NULL,
-					         salt varchar(15) NOT NULL
+					         password varchar(128) NOT NULL,
+					         salt varchar(128) NOT NULL
 					       ) CHARACTER SET utf8 COLLATE utf8_general_ci ;";
 			$this->db->simple_query($create_table_q);
 		}
