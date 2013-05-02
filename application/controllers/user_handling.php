@@ -11,7 +11,13 @@ class User_handling extends CI_Controller {
 	{
 		$this->load->model('usermodel');
 
+		$user = array(	'username' => $this->input->post('username'),
+						'password' => $this->input->post('password')	
+					);
+
 		$this->load->view('user_handling/login');
+
+		print_r($this->usermodel->get_user($user['username'], $user['password']));
 	}
 
 	public function rand_string( $length ) {
