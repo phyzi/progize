@@ -38,6 +38,7 @@
 		<div class="project_tile item i_4"></div>
 		<div class="project_tile item i_5"></div>
 		<div class="project_tile item i_6"></div>
+		<div class="project_tile item i_7"></div>
 		
 	</div>
 	
