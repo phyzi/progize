@@ -29,6 +29,19 @@
 		
 	</div>
 	
+	<div id="master_tiles_container">
+		
+		<div class="project_tile item i_0"></div>
+		<div class="project_tile item i_1"></div>
+		<div class="project_tile item i_2"></div>
+		<div class="project_tile item i_3"></div>
+		<div class="project_tile item i_4"></div>
+		<div class="project_tile item i_5"></div>
+		<div class="project_tile item i_6"></div>
+		<div class="project_tile item i_7"></div>
+		
+	</div>
+	
 </div>
 
 </body>
