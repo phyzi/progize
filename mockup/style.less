@@ -4,16 +4,87 @@
 
 /* !--- Colors --- */
 @color_bg: #f9f2e7;
-@color_hl_main: #00abc6;
-@color_hl_scnd: #8fbe00;
+@color_main: #0095D8;
+@color_scnd: #00B22B;
 @shade_step: 4.5%;
+.shaded_color(@color_to_shade, @shade_steps) {
+	@shaded_color: lighten(@color_to_shade, @shade_steps*@shade_step);
+}
+.color_main_0 {
+		.shaded_color(@color_main, 0);
+		background-color: @shaded_color;
+		color: @color_bg;
+}
+.color_main_1 {
+		.shaded_color(@color_main, 1);
+		background-color: @shaded_color;
+		color: @color_bg;
+}
+.color_main_2 {
+		.shaded_color(@color_main, 2);
+		background-color: @shaded_color;
+		color: @color_bg;
+}
+.color_main_3 {
+		.shaded_color(@color_main, 3);
+		background-color: @shaded_color;
+		color: @color_bg;
+}
+.color_scnd_0 {
+		.shaded_color(@color_scnd, 0);
+		background-color: @shaded_color;
+		color: @color_bg;
+}
+.color_scnd_1 {
+		.shaded_color(@color_scnd, 1);
+		background-color: @shaded_color;
+		color: @color_bg;
+}
+.color_scnd_2 {
+		.shaded_color(@color_scnd, 2);
+		background-color: @shaded_color;
+		color: @color_bg;
+}
+.color_scnd_3 {
+		.shaded_color(@color_scnd, 3);
+		background-color: @shaded_color;
+		color: @color_bg;
+}
 
 /* !--- Global --- */
 body {
 	background-color: @color_bg;
+	height: 100%;
 }
 
 /* !--- Structure --- */
+
+#welcome_container {
+	margin: 2em auto;
+	width: 80em;
+	height: 100%;
+	#welcome_info_container {
+		float: left;
+		width: 60%;
+		#welcome_item_branding {
+			height: 20em;
+		}
+	}
+	#login_container {
+		float: left;
+		width: 40%;
+		height: 100%;
+		.color_scnd_3;
+		.head_item {
+			height: 4em;
+			.color_scnd_0;
+		}
+		.form_item {
+			min-height: 2em;
+			.color_scnd_1;
+		}
+	}
+}
 
 #header {
 	margin-top: 2em;
@@ -31,21 +102,21 @@ body {
 			width: 100%;
 			position: relative;
 			&.i_0 {
-				background-color: lighten(@color_hl_main, @shade_step*0);
+				background-color: lighten(@color_main, @shade_step*0);
 				height: 60%;
 				&:hover {
-					background-color: lighten(@color_hl_main, @shade_step*-2);
+					background-color: lighten(@color_main, @shade_step*-2);
 				}
 			}
 			&.i_1 {
-				background-color: lighten(@color_hl_main, @shade_step*1);
+				background-color: lighten(@color_main, @shade_step*1);
 				height: 30%;
 				&:hover {
-					background-color: lighten(@color_hl_main, @shade_step*-1);
+					background-color: lighten(@color_main, @shade_step*-1);
 				}
 			}
 			&.i_2 {
-				background-color: lighten(@color_hl_main, @shade_step*2);
+				background-color: lighten(@color_main, @shade_step*2);
 				height: 10%;
 			}
 			.item_text {
@@ -78,45 +149,45 @@ body {
 			height: 100%;
 			float: left;
 			&.i_0 {
-				background-color: lighten(@color_hl_scnd, @shade_step*0);
+				background-color: lighten(@color_scnd, @shade_step*0);
 				&:hover {
-					background-color: lighten(@color_hl_scnd, @shade_step*-2);
+					background-color: lighten(@color_scnd, @shade_step*-2);
 				}
 			}
 			&.i_1 {
-				background-color: lighten(@color_hl_scnd, @shade_step*1);
+				background-color: lighten(@color_scnd, @shade_step*1);
 				&:hover {
-					background-color: lighten(@color_hl_scnd, @shade_step*-1);
+					background-color: lighten(@color_scnd, @shade_step*-1);
 				}
 			}
 			&.i_2 {
-				background-color: lighten(@color_hl_scnd, @shade_step*2);
+				background-color: lighten(@color_scnd, @shade_step*2);
 				&:hover {
-					background-color: lighten(@color_hl_scnd, @shade_step*0);
+					background-color: lighten(@color_scnd, @shade_step*0);
 				}
 			}
 			&.i_3 {
-				background-color: lighten(@color_hl_scnd, @shade_step*3);
+				background-color: lighten(@color_scnd, @shade_step*3);
 				&:hover {
-					background-color: lighten(@color_hl_scnd, @shade_step*1);
+					background-color: lighten(@color_scnd, @shade_step*1);
 				}
 			}
 			&.i_4 {
-				background-color: lighten(@color_hl_scnd, @shade_step*4);
+				background-color: lighten(@color_scnd, @shade_step*4);
 				&:hover {
-					background-color: lighten(@color_hl_scnd, @shade_step*2);
+					background-color: lighten(@color_scnd, @shade_step*2);
 				}
 			}
 			&.i_5 {
-				background-color: lighten(@color_hl_scnd, @shade_step*5);
+				background-color: lighten(@color_scnd, @shade_step*5);
 				&:hover {
-					background-color: lighten(@color_hl_scnd, @shade_step*3);
+					background-color: lighten(@color_scnd, @shade_step*3);
 				}
 			}
 			&.i_6 {
-				background-color: lighten(@color_hl_scnd, @shade_step*6);
+				background-color: lighten(@color_scnd, @shade_step*6);
 				&:hover {
-					background-color: lighten(@color_hl_scnd, @shade_step*4);
+					background-color: lighten(@color_scnd, @shade_step*4);
 				}
 			}
 		}
