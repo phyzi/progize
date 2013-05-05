@@ -51,7 +51,7 @@
 		color: @color_bg;
 }
 
-/* !--- General Classes --- */
+/* !--- Text Formatting --- */
 .text_vertical_center {
 	position: absolute;
 	top: 50%;
@@ -62,7 +62,6 @@
 	text-align: center;
 }
 
-
 /* !--- Global --- */
 html, body {
 	background-color: @color_bg;
@@ -71,21 +70,27 @@ html, body {
 
 /* !--- Structure --- */
 
-.vertical_seperator {
-	float: left;
-	width: 1em;
+.bordered {
+	border: 1em solid white;
+	box-shadow: 1px 1px 0.5em rgba(0,0,0,0.3), 0 0 1px rgba(0,0,0,0.3);
 }
 
-@welcome_container_width: 85em;
+.vertical_seperator {
+	float: left;
+	width: 2em;
+	height: 100%;
+}
+
 #welcome_container {
 	margin: 2em auto;
-	width: @welcome_container_width;
+	width: 90em;
 	height: 100%;
 	#welcome_info_container {
 		float: left;
-		width: 63%;
+		width: 65%;
 		height: 100%;
 		.color_main_3;
+		.bordered;
 		#welcome_item_branding {
 			height: 20em;
 			position: relative;
@@ -97,11 +102,10 @@ html, body {
 		}
 	}
 	#login_container {
-@welcome_container_width: 85em;
-		float: right;
-		width: 35%;
+		overflow: hidden; // establish BFC
 		height: 100%;
 		.color_scnd_3;
+		.bordered;
 		.head_item {
 			height: 4em;
 			.color_scnd_0;
