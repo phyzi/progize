@@ -1,8 +1,8 @@
 <?php 
 	//we need the form helper
-	//$this->load->helper('form');
+	$this->load->helper('form');
 	//This is just a library i need to generate urls
-	//$this->load->helper('url');
+	$this->load->helper('url');
 ?>
 
 <!DOCTYPE html>
