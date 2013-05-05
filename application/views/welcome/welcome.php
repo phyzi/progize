@@ -14,10 +14,10 @@
 	<title>Welcome to proGize</title>
 	
 	<!-- Stylesheets -->
-	<link rel="stylesheet/less" type="text/css" href="style.less">
+	<link rel="stylesheet/less" type="text/css" href="../css/style.less">
 	
 	<!-- {less} compiler -->
-	<script src="less.js" type="text/javascript"></script>
+	<script src="../css/less.js" type="text/javascript"></script>
 
 </head>
 <body>
