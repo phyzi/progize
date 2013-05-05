@@ -1,5 +1,5 @@
 <?php
-	//I need you!
+	//This is just a library i need to generate urls
 	$this->load->helper('url');
 ?>
 
@@ -12,12 +12,8 @@
 <body>
 
 <div id="wrapper">
-	<?php
-		echo $result;
-		//The result is hardcoded right now. I'll put them in a language file later.
-	?>
-	Back to <a href=" <?php echo site_url(''); ?> ">Home</a>
-	<br />
+	<p>You have been logged out</p>
+	<p>Back to <a href=" <?php echo site_url(''); ?> ">Home</a></p>
 </div>
 
 </body>

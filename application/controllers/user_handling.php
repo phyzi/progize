@@ -15,12 +15,26 @@ class User_handling extends CI_Controller {
 						'password' => $this->input->post('password')	
 					);
 
-		$this->load->view('user_handling/login');
+		$result = $this->usermodel->get_user($user['username'], $user['password']);
 
-		print_r($this->usermodel->get_user($user['username'], $user['password']));
+		$this->load->view('user_handling/login', array( 'result' => $result ) );
 	}
 
-	public function rand_string( $length ) {
+	public function logout()
+	{
+		//KILL THE EVIL SESSION DATA
+		$userdata = $this->session->all_userdata();
+		unset($userdata['session_id']);
+		unset($userdata['ip_address']);
+		unset($userdata['user_agent']);
+		unset($userdata['last_activity']);
+
+		$this->session->unset_userdata($userdata);
+
+		$this->load->view('user_handling/logout');
+	}
+
+	private function rand_string( $length ) {
 		$str = "";
 
 		$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";	
