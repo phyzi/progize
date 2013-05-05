@@ -8,7 +8,8 @@
 @color_scnd: #71B01D;
 @shade_step: 6%;
 .shaded_color(@color_to_shade, @shade_steps) {
-	@shaded_color: desaturate(lighten(@color_to_shade, @shade_steps*@shade_step), @shade_steps*@shade_step);
+	//@shaded_color: desaturate(lighten(@color_to_shade, @shade_steps*@shade_step), @shade_steps*@shade_step);
+	@shaded_color: @color_to_shade+#111*@shade_steps;
 }
 .color_main_0 {
 		.shaded_color(@color_main, 0);
