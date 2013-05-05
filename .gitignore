@@ -2,7 +2,7 @@
 /.buildpath
 /.project
 /.travis.yml
-/.DS_STORE
+.DS_STORE
 /user_guide/
 */config/development
 */logs/log-*.php
