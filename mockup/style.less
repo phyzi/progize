@@ -3,12 +3,12 @@
 @import url("http://www.viwid.com/config/general.css");
 
 /* !--- Colors --- */
-@color_bg: #f9f2e7;
-@color_main: #0095D8;
+@color_bg: #F5FFF5;
+@color_main: #0089CC;
 @color_scnd: #00B22B;
-@shade_step: 4.5%;
+@shade_step: 6%;
 .shaded_color(@color_to_shade, @shade_steps) {
-	@shaded_color: lighten(@color_to_shade, @shade_steps*@shade_step);
+	@shaded_color: desaturate(lighten(@color_to_shade, @shade_steps*@shade_step), @shade_steps*@shade_step);
 }
 .color_main_0 {
 		.shaded_color(@color_main, 0);
@@ -51,37 +51,71 @@
 		color: @color_bg;
 }
 
+/* !--- General Classes --- */
+.text_vertical_center {
+	position: absolute;
+	top: 50%;
+	margin-top: -0.5em;
+}
+.text_horizontal_center {
+	width: 100%;
+	text-align: center;
+}
+
+
 /* !--- Global --- */
-body {
+html, body {
 	background-color: @color_bg;
 	height: 100%;
 }
 
 /* !--- Structure --- */
 
+.vertical_seperator {
+	float: left;
+	width: 1em;
+}
+
+@welcome_container_width: 85em;
 #welcome_container {
 	margin: 2em auto;
-	width: 80em;
+	width: @welcome_container_width;
 	height: 100%;
 	#welcome_info_container {
 		float: left;
-		width: 60%;
+		width: 63%;
+		height: 100%;
+		.color_main_3;
 		#welcome_item_branding {
 			height: 20em;
+			position: relative;
+			.item_text {
+				font-size: 4em;
+				font-weight: bold;
+				padding: 1em 0 0 1em;
+			}
 		}
 	}
 	#login_container {
-		float: left;
-		width: 40%;
+@welcome_container_width: 85em;
+		float: right;
+		width: 35%;
 		height: 100%;
 		.color_scnd_3;
 		.head_item {
 			height: 4em;
 			.color_scnd_0;
+			position: relative;
 		}
 		.form_item {
 			min-height: 2em;
 			.color_scnd_1;
+		}
+		.item_text {
+			padding-left: 1em;
+			.text_vertical_center;
+			font-weight: bold;
+			font-size: 2em;
 		}
 	}
 }
@@ -120,11 +154,6 @@ body {
 				height: 10%;
 			}
 			.item_text {
-				position: absolute;
-				top: 50%;
-				margin-top: -0.5em;	
-				width: 100%;
-				text-align: center;
 				color: @color_bg;
 				font-weight: bold;
 			}
