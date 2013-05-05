@@ -25,6 +25,7 @@
 		
 	</div>
 	
+	<div class="vertical_seperator"></div>
 	
 	<div id="login_container">
 				
