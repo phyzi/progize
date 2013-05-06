@@ -4,28 +4,29 @@ class Usermodel extends CI_Model {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('tablecollective');
 	}
 
-	function table_exists()
+	public function table_exists()
 	{
-		$create_table_q = "CREATE TABLE IF NOT EXISTS 	users (
-				         id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-				         username VARCHAR(20) NOT NULL,
-				         email varchar(30) NOT NULL,
-				         password varchar(128) NOT NULL,
-				         salt varchar(128) NOT NULL,
-				         sessid varchar(32) NOT NULL
-				       ) CHARACTER SET utf8 COLLATE utf8_general_ci ;";
-		$this->db->simple_query($create_table_q);
+		$this->check_tables->tablecollective->create_table('users');
 	}
 
-	public function create_user($username, $email, $password, $salt)
+	private function val_email()
 	{
 		//Alright so this checks if @ or . are inside the $email string. And if @ and . are too close together (like this teletubbies@.com)
 		$atpos = strpos($email, '@');
 		$diff = strpos($email, '.', $atpos) - $atpos;
 		if($atpos == 1 ||  strpos($email, '@') == false || strpos($email, '.') == false || $diff <= 1)
 			return 'This E-Mail is invalid.';
+
+	}
+
+	public function create_user($username, $email, $password, $salt)
+	{
+		$this->table_exists();
+
+		$this->val_email();
 
 		//I need some session data
 		$sessiondata = $this->session->all_userdata();

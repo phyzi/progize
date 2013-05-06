@@ -1,11 +1,9 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Migration_Add_pg_tables extends CI_Migration {
 
-	public function index()
-	{
-		$this->load->dbforge();
-
+      public function up()
+      {
 		$fields = array(
                         'session_id' => array(
                                                  'type' => 'VARCHAR',
@@ -31,21 +29,16 @@ class Welcome extends CI_Controller {
                                                  'type' => 'TEXT'
                                           ),
                         );
+                        $this->dbforge->add_key('session_id', true);
+                        $this->dbforge->add_key('last_activity');
 
-				$this->dbforge->add_key('session_id', true);
-				$this->dbforge->add_key('last_activity');
+                        $this->dbforge->add_field($fields);
+                        $this->dbforge->create_table('pg_sessionas', true);
+      }
 
+      public function down()
+      {
+            $this->dbforge->drop_table('pg_sessions');
+      }
 
-
-		$this->dbforge->add_field($fields);
-		$this->dbforge->create_table('pg_sessions', true);
-
-
-		//Hey thar u new to this? Let me introduce you to the pg_sessions table!
-		// $this->load->model('tablecollective');
-
-		// $this->tablecollective->create_table('pg_sessions');
-
-		$this->load->view('welcome/welcome', array( 'sessiondata' => $this->session->all_userdata() ));
-	}
 }

@@ -58,14 +58,13 @@ class User_handling extends CI_Controller {
 
 		
 
-		if ($new_user['password'] !== $new_user['password_r'])
+		if ($new_user['password'] !== $new_user['password_r']) {
 			$result = 'passwordwrong';
-		else {
+		} else {
 			$new_user['password'] = hash("sha512", hash("sha512", $new_user['password']) . $new_user['salt']);
 
 			$this->load->model('usermodel');
 
-			$this->usermodel->table_exists();
 			$result = $this->usermodel->create_user($new_user['username'], $new_user['email'], $new_user['password'], $new_user['salt']);
 
 		}
