@@ -13,11 +13,13 @@
 	
 	<title>Welcome to proGize</title>
 	
-	<!-- Stylesheets -->
-	<link rel="stylesheet/less" type="text/css" href="../css/style.less">
-	
-	<!-- {less} compiler -->
-	<script src="../css/less.js" type="text/javascript"></script>
+	<?php
+		// Stylesheets
+		echo '<link rel="stylesheet/less" type="text/css" href="' . base_url() . 'css/style.less' . '">';
+
+		// {less} compiler
+		echo '<script src="' . base_url() . 'css/less.js' . '" type="text/javascript"></script>';
+	?>
 
 </head>
 <body>

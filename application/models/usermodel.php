@@ -9,16 +9,18 @@ class Usermodel extends CI_Model {
 
 	public function table_exists()
 	{
-		$this->check_tables->tablecollective->create_table('users');
+		$this->tablecollective->create_table('users');
 	}
 
-	private function val_email()
+	private function val_email( $email )
 	{
-		//Alright so this checks if @ or . are inside the $email string. And if @ and . are too close together (like this teletubbies@.com)
-		$atpos = strpos($email, '@');
-		$diff = strpos($email, '.', $atpos) - $atpos;
-		if($atpos == 1 ||  strpos($email, '@') == false || strpos($email, '.') == false || $diff <= 1)
-			return 'This E-Mail is invalid.';
+		$email_validation_expression = "/^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/";
+		$email_return = preg_match($email_validation_expression, $email);
+
+		if ($email_return === 0 || $email_return === FALSE)
+			return false;
+		else
+			return true;
 
 	}
 
@@ -26,7 +28,8 @@ class Usermodel extends CI_Model {
 	{
 		$this->table_exists();
 
-		$this->val_email();
+		if (!$this->val_email($email))
+			return 'This email is invalid';
 
 		//I need some session data
 		$sessiondata = $this->session->all_userdata();
@@ -40,8 +43,8 @@ class Usermodel extends CI_Model {
 				return 'Sorry this username has already been taken';
 			elseif (strtolower($row->email) == strtolower($email))
 				return 'Sorry this E-Mail has already been taken';
-			elseif ($row->sessid == $session_id)
-				return 'COME ON ISN\'T ONE USER ENOUGH OR WHAT';
+			//elseif ($row->sessid == $session_id)					//Check if the user already registered an account
+			//	return 'COME ON ISN\'T ONE USER ENOUGH OR WHAT';
 		}
 
 		//Soo you may enter the vortex
@@ -57,7 +60,7 @@ class Usermodel extends CI_Model {
 
 		//Punch the user for being dumb
 		if ($create_user_q === false)
-			return 'Something went terribly terribly wrong';
+			return 'Something went terribly terribly wrong...';
 		else
 			return 'Success! You are now part of proGize!';
 	}

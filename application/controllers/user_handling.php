@@ -4,7 +4,7 @@ class User_handling extends CI_Controller {
 
 	public function index()
 	{
-
+		print('test');
 	}
 
 	public function login()

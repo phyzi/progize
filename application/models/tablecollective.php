@@ -13,27 +13,27 @@ class tablecollective extends CI_Model {
 			case 'pg_sessions':
 				$fields = array(
                         'session_id' => array(
-                                                 'type' => 'VARCHAR',
-                                                 'constraint' => '40',
-                                                 'default' => 0
+                                                'type' => 'VARCHAR',
+                                                'constraint' => '40',
+                                                'default' => 0
                                           ),
                         'ip_address' => array(
-                                                 'type' => 'VARCHAR',
-                                                 'constraint' => '45',
-                                                 'default' => 0
+                                                'type' => 'VARCHAR',
+                                                'constraint' => '45',
+                                                'default' => 0
                                           ),
                         'user_agent' => array(
-                                                 'type' =>'VARCHAR',
-                                                 'constraint' => '120'
+                                                'type' =>'VARCHAR',
+                                                'constraint' => '120'
                                           ),
                         'last_activity' => array(
-                                                 'type' => 'INT',
-                                                 'constraint' => '10',
-                                                 'unsigned' => true,
-                                                 'default' => 0,
+                                                'type' => 'INT',
+                                                'constraint' => '10',
+                                                'unsigned' => true,
+                                                'default' => 0,
                                           ),
                         'user_data' => array(
-                                                 'type' => 'TEXT'
+                                                'type' => 'TEXT'
                                           ),
                         );
 				$this->dbforge->add_key('session_id', true);
@@ -43,28 +43,28 @@ class tablecollective extends CI_Model {
 			case 'users':
 				$fields = array(
                         'id' => array(
-					                             'type' => 'INT',
-					                             'auto_increment' => true
+			                             'type' => 'INT',
+			                             'auto_increment' => true
 					                      ),
                         'username' => array(
-                                                 'type' => 'VARCHAR',
-                                                 'constraint' => '20'
+                                                'type' => 'VARCHAR',
+                                                'constraint' => '20'
                                           ),
                         'email' => array(
-                                                 'type' => 'VARCHAR',
-                                                 'constraint' => '30'
+                                                'type' => 'VARCHAR',
+                                                'constraint' => '30'
                                           ),
                         'password' => array(
-                                                 'type' => 'VARCHAR',
-                                                 'constraint' => '128'
+                                                'type' => 'VARCHAR',
+                                                'constraint' => '128'
                                           ),
                         'salt' => array(
-                                                 'type' => 'VARCHAR',
-                                                 'constraint' => '128'
+                                                'type' => 'VARCHAR',
+                                                'constraint' => '128'
                                           ),
                         'sessid' => array(
-                                                 'type' => 'VARCHAR',
-                                                 'constraint' => '32'
+                                                'type' => 'VARCHAR',
+                                                'constraint' => '32'
                                           ),
 				);
 				$this->dbforge->add_key('id', true);
