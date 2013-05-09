@@ -6,10 +6,8 @@
 ?>
 
 <?php
-	
-	$views_directory = '/';
-	
-	include($views_directory.'global/header.php');
+		
+	include($this->view('global/header'));
 
 ?>
 
