@@ -14,7 +14,7 @@
 <div id="section_sidebar_left">
 			
 	<?php
-		include($this->view('global/master_nav_container.php'));
+		include($this->view('global/master_nav_container'));
 	?>
 			
 </div>
@@ -22,7 +22,7 @@
 <div id="section_sidebar_right">
 	
 	<?php
-		include($this->view('global/login_container.php'));
+		include($this->view('global/login_container'));
 	?>
 
 </div>
@@ -30,7 +30,7 @@
 <div id="section_main">
 
 	<?php
-		include($this->view('global/master_tile_slider.php'));
+		include($this->view('global/master_tile_slider'));
 	?>
 
 	<!-- Main content -->
@@ -53,5 +53,5 @@
 </div>
 
 <?php
-	include($this->view('global/footer.php'));
+	include($this->view('global/footer'));
 ?>
