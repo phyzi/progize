@@ -7,7 +7,7 @@
 
 <?php
 	
-	$views_directory = '/application/views/';
+	$views_directory = site_url();
 	
 	include($views_directory.'global/header.php');
 
