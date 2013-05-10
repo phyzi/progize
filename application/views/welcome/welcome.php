@@ -27,11 +27,15 @@
 
 </div>
 
-<div id="section_main">
+<div id="section_header">
 
 	<?php
 		$this->view('global/master_tile_slider');
 	?>
+
+</div>
+
+<div id="section_main">
 
 	<!-- Main content -->
 	<div id="main_content_container">
@@ -48,7 +52,6 @@
 		</div>
 	
 	</div>
-
 
 </div>
 
