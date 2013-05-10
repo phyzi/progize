@@ -2,13 +2,14 @@ $(function () {
 	
 	var i = 0;
 	$('.tile').each(function () {
+		
+		var title = $(this).find('.title');
 	
 		$(this).addClass('item_'+i);
-		$(this).addClass('color_scnd_'+i);
-		$(this).addClass('color_scnd_'+i);
+		$(title).addClass('color_scnd_'+i);
 		$(this).css({
-				left:i*22+'em'
-		})
+				left:i*21.5+'em'
+		});
 		i++;
 		
 	});

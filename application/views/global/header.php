@@ -19,6 +19,7 @@
 
 	<!-- Scripts -->
 	<script src="<?=base_url()?>js/tileslider.js" type="text/javascript"></script>
+	<script src="<?=base_url()?>js/animations.js" type="text/javascript"></script>
 
 </head>
 <body>
