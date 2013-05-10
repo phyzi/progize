@@ -1,3 +1,7 @@
+<?php
+	//$sessiondata['username'] = 'knl';
+?>
+
 <!-- Login container -->
 <div id="login_container">
 

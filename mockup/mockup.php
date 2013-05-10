@@ -6,15 +6,6 @@
 		return '../application/views/'.$append;
 	}
 	
-	//$sessiondata['username'] = 'knl';
-	
-	$master_tileslider_tiles[] = array('title' => 'Project X');
-	$master_tileslider_tiles[] = array('title' => 'Project Y');
-	$master_tileslider_tiles[] = array('title' => 'Project Z');
-	$master_tileslider_tiles[] = array('title' => 'Project A');
-	$master_tileslider_tiles[] = array('title' => 'Project B');
-	$master_tileslider_tiles[] = array('title' => 'Project C');
-	
 	$view_directory = '/Users/knl/Dropbox/Projects/progize/application/views/';
 ?>
 

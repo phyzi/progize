@@ -29,7 +29,7 @@
 
 <div id="section_header">
 
-	<?php
+	<?php	
 		$this->view('global/master_tile_slider');
 	?>
 
