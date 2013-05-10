@@ -27,7 +27,8 @@ class Welcome extends CI_Controller {
 	      					'header' => array('global/header'),
 	      					'section_sidebar_left' => array('global/master_nav_container'),
 	      					'section_sidebar_right' => array('global/login_container'),
-	      					'section_main' => array('global/master_tile_slider', 'welcome/welcome'),
+	      					'section_header' => array('global/master_tile_slider'),
+	      					'section_main' => array('welcome/welcome'),
 	      					'footer' => array('global/footer')
 	      				);
 	    // *** Until here, the rest should'nt really matter to you 									*** //
