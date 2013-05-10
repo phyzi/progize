@@ -8,7 +8,7 @@
 <!-- Login container -->
 <div id="login_container">
 
-<?php				
+<?php
 	if (isset($sessiondata['username']) && $sessiondata['username'] != "") {
 		// user is logged in
 ?>
