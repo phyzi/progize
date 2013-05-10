@@ -1,5 +1,10 @@
 <?php
+<<<<<<< HEAD
+	//helper classes
+	$this->load->helper('url');
+=======
 	//$sessiondata['username'] = 'knl';
+>>>>>>> 78fe2829dcad72c580fba9ccd8bae710dd9bde98
 ?>
 
 <!-- Login container -->
