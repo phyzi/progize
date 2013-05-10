@@ -9,7 +9,7 @@
 	<!-- Stylesheets -->
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>css/reset.css">
 	<link rel="stylesheet" type="text/css" href="<?=base_url()?>css/general.css">
-	<link rel="stylesheet/less" type="text/css" href="<?=base_url()?>css/style.less">
+	<link rel="stylesheet/less" type="text/css" href="<?=base_url()?>css/style.less" id="less_stylesheet">
 
 	<!-- {less} compiler -->
 	<script src="<?=base_url()?>css/less.js" type="text/javascript"></script>

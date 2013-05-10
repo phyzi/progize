@@ -63,6 +63,13 @@
 
 </div>
 
+<script>
+console.log('modify');
+less.modifyVars({
+'@@color_bg': '#000000',
+});
+</script>
+
 <?php
 	include $view_directory.'global/footer.php';
 ?>
