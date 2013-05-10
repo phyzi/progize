@@ -1,5 +1,10 @@
 <?php
 
+//---------|______________|---------//
+//	proGize Team - Robin Eberhard	//
+//									//
+//##################################//
+
 class Usermodel extends CI_Model {
 	public function __construct()
 	{

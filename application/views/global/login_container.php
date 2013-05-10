@@ -1,3 +1,8 @@
+<?php
+	//helper classes
+	$this->load->helper('url');
+?>
+
 <!-- Login container -->
 <div id="login_container">
 

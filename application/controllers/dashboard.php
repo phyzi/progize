@@ -1,5 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+//---------|______________|---------//
+//	proGize Team - Robin Eberhard	//
+//									//
+//##################################//
+
 class Dashboard extends CI_Controller {
 
 	public function index()

@@ -1,5 +1,10 @@
 <?php
 
+//---------|______________|---------//
+//	proGize Team - Robin Eberhard	//
+//									//
+//##################################//
+
 class Projectmodel extends CI_Model {
 	public function __construct()
 	{
