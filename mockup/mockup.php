@@ -30,20 +30,14 @@
 
 <div id="section_main">
 
-	<div id="main_content">
-	
-		<?php
-			include $view_directory.'welcome/welcome.php';
-		?>
-		
-	</div>
+	<?php
+		include $view_directory.'welcome/welcome.php';
+	?>
 
-	<div id="main_sidebar_right">
 		
 		<?php
 			include $view_directory.'global/login_container.php';
 			
-			include $view_directory.'global/notification_container.php';
 		?>
 		
 	</div>

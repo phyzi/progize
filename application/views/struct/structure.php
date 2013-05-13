@@ -16,7 +16,7 @@
 <?php
 
 	foreach ($structs as $struct => $v) {
-		// $struc is the div
+		// $struct is the div
 
 		if($struct === 'header' || $struct === 'footer') {
 			foreach ($v as $view) {

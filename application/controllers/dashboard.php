@@ -9,14 +9,12 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-      	$structs = array( 
-      					'header' => array('global/header'),
-      					'section_sidebar_left' => array('global/master_nav_container'),
-      					'section_sidebar_right' => array('global/login_container'),
-      					'section_header' => array('global/master_tile_slider'),
-      					'section_main' => array('dashboard/dashboard'),
-      					'footer' => array('global/footer')
-      				);
+	      	$structs = array( 
+	      					'header' => array('global/header'),
+	      					'section_header' => array('global/master_nav_container', 'global/master_tile_slider'),
+	      					'section_main' => array('dashboard/dashboard', 'global/login_container'),
+	      					'footer' => array('global/footer')
+	      					);
 		$this->load->view('struct/structure', array(
 													'structs' => $structs,
 													'sessiondata' => $this->session->all_userdata()

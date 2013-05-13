@@ -1,4 +1,4 @@
-<div id="main_content_container">
+<div id="main_content">
 	
 	<div id="welcome_info_container">
 		

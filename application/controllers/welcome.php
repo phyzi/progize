@@ -25,10 +25,8 @@ class Welcome extends CI_Controller {
       	//	Call me maybe if you need more help 														//
 	      	$structs = array( 
 	      					'header' => array('global/header'),
-	      					'section_sidebar_left' => array('global/master_nav_container'),
-	      					'section_sidebar_right' => array('global/login_container'),
-	      					'section_header' => array('global/master_tile_slider'),
-	      					'section_main' => array('welcome/welcome'),
+	      					'section_header' => array('global/master_nav_container', 'global/master_tile_slider'),
+	      					'section_main' => array('welcome/welcome', 'global/login_container'),
 	      					'footer' => array('global/footer')
 	      				);
 	    // *** Until here, the rest should'nt really matter to you 									*** //
