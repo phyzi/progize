@@ -7,6 +7,9 @@
 	}
 	
 	$view_directory = '/Users/knl/Dropbox/Projects/progize/application/views/';
+	
+	$sessiondata['username'] = 'knl';
+
 ?>
 
 <?php
@@ -15,46 +18,34 @@
 
 ?>
 
-<div id="section_sidebar_left">
+<div id="section_header">
 			
 	<?php
 		include $view_directory.'global/master_nav_container.php';
-	?>
-			
-</div>
-
-<div id="section_sidebar_right">
-	
-	<?php
-		include $view_directory.'global/login_container.php';
-	?>
-
-</div>
-
-<div id="section_header">
-
-	<?php
+		
 		include $view_directory.'global/master_tile_slider.php';
 	?>
 
 </div>
 
 <div id="section_main">
+
+	<div id="main_content">
 	
-	<!-- Main content -->
-	<div id="main_content_container">
+		<?php
+			include $view_directory.'welcome/welcome.php';
+		?>
 		
-		<div id="welcome_info_container">
+	</div>
+
+	<div id="main_sidebar_right">
+		
+		<?php
+			include $view_directory.'global/login_container.php';
 			
-			<div class="color_main_0" style="height: 3em"></div>
-			<div id="welcome_item_branding" class="color_main_1">
-				<div class="item_text">ProGize<br>[more info here]</div>
-			</div>
-			<div class="color_main_2" style="height: 2em"></div>
-			<div class="color_main_3" style="height: 1em"></div>
-			
-		</div>
-	
+			include $view_directory.'global/notification_container.php';
+		?>
+		
 	</div>
 
 </div>
