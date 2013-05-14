@@ -45,7 +45,7 @@ class Usermodel extends CI_Model {
 
 		foreach ($check_users->result() as $row) {
 			if (strtolower($row->username) == strtolower($username))
-				return 'Sorry this username has already been taken';
+				return 'Sorry this username has already been taken: ' . $username;
 			elseif (strtolower($row->email) == strtolower($email))
 				return 'Sorry this E-Mail has already been taken';
 			//elseif ($row->sessid == $session_id)					//Check if the user already registered an account

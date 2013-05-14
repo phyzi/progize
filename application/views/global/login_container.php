@@ -23,24 +23,28 @@
 			<div class="item_text">LOGIN</div>
 		</div>
 		<div id="login_form_item_login" class="item">
-			<form class="form_wrapper">
-				<input type="text" class="input_text"/>
-				<input type="text" class="input_text"/>
-				<input type="submit"/>
-			</form>
+			<?php
+				echo form_open('user_handling/login');
+					echo form_input( array('type' => 'text', 'class' => 'input_text', 'name' => 'username', 'value' => 'username') );
+					echo form_input( array('type' => 'password', 'class' => 'input_text', 'name' => 'password') );
+					echo form_submit('register', 'HAHAHAHAHAHA');
+				echo form_close();
+			?>
 		</div>
 		
 		<div id="login_head_item_register" class="item head_item">
 			<div class="item_text">REGISTER</div>
 		</div>	
 		<div id="login_form_item_register" class="item">
-			<form class="form_wrapper">
-				<input type="text" class="input_text"/>
-				<input type="text" class="input_text"/>
-				<input type="text" class="input_text"/>
-				<input type="text" class="input_text"/>
-				<input type="submit"/>
-			</form>
+			<?php
+				echo form_open('user_handling/register');
+					echo form_input( array('type' => 'text', 'class' => 'input_text', 'name' => 'username') );
+					echo form_input( array('type' => 'text', 'class' => 'input_text', 'name' => 'email') );
+					echo form_input( array('type' => 'password', 'class' => 'input_text', 'name' => 'password') );
+					echo form_input( array('type' => 'password', 'class' => 'input_text', 'name' => 'password_r') );
+					echo form_submit('register', 'HAHAHAHAHAHA');
+				echo form_close();
+			?>
 		</div>
 <?php
 	}
