@@ -10,6 +10,7 @@ class Usermodel extends CI_Model {
 	{
 		parent::__construct();
 		$this->load->model('tablecollective');
+		$this->lang->load('alert', 'en');
 	}
 
 	public function table_exists()
@@ -19,14 +20,10 @@ class Usermodel extends CI_Model {
 
 	private function val_email( $email )
 	{
-		$email_validation_expression = "/^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/";
-		$email_return = preg_match($email_validation_expression, $email);
-
-		if ($email_return === 0 || $email_return === FALSE)
-			return false;
-		else
+		if (filter_var($email, FILTER_VALIDATE_EMAIL))
 			return true;
-
+		else
+			return false;
 	}
 
 	public function create_user($username, $email, $password, $salt)
@@ -34,7 +31,7 @@ class Usermodel extends CI_Model {
 		$this->table_exists();
 
 		if (!$this->val_email($email))
-			return 'This email is invalid';
+			return $this->lang->line('alert_email_invalid');
 
 		//I need some session data
 		$sessiondata = $this->session->all_userdata();
@@ -45,9 +42,9 @@ class Usermodel extends CI_Model {
 
 		foreach ($check_users->result() as $row) {
 			if (strtolower($row->username) == strtolower($username))
-				return 'Sorry this username has already been taken: ' . $username;
+			return $this->lang->line('alert_username_taken');
 			elseif (strtolower($row->email) == strtolower($email))
-				return 'Sorry this E-Mail has already been taken';
+			return $this->lang->line('alert_email_taken');
 			//elseif ($row->sessid == $session_id)					//Check if the user already registered an account
 			//	return 'COME ON ISN\'T ONE USER ENOUGH OR WHAT';
 		}
@@ -65,9 +62,9 @@ class Usermodel extends CI_Model {
 
 		//Punch the user for being dumb
 		if ($create_user_q === false)
-			return 'Something went terribly terribly wrong...';
+			return $this->lang->line('alert_random_error');
 		else
-			return 'Success! You are now part of proGize!';
+			return $this->lang->line('alert_registration_successful');
 	}
 
 	public function get_user($username, $password)
@@ -91,15 +88,22 @@ class Usermodel extends CI_Model {
 			$get_password_q = $this->db->get()->row_array();
 
 			//Everything worked, now let's party
-			$this->db->select('username', 'email')->from('users')->where('username', $username);
+			$this->set_sessiondata($username);
+
+			if ($get_password_q['password'] === $hashpass)
+			return $this->lang->line('alert_login_successful');
+		}
+		return $this->lang->line('alert_password_wrong');
+	}
+
+	public function set_sessiondata($username, $return = false) {
+			$this->db->select('username')->from('users')->where('username', $username);
 			$session_userdata = $this->db->get()->row_array();
 
 			$this->session->set_userdata($session_userdata);
 
-			if ($get_password_q['password'] === $hashpass)
-				return 'You are now logged in. Have fun!';
-		}
-		return 'Incorrect password. Cannot *bzz* query *bzz* <b>self destruct initiated</b>';
+			if ($return)
+				return $this->lang->line('alert_login_successful');
 	}
 
 }

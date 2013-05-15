@@ -9,20 +9,37 @@ class User_handling extends CI_Controller {
 
 	public function index()
 	{
-		print('test');
+		$this->lang->load('alert', 'en');
 	}
 
-	public function login()
+	public function login($username = NULL)
 	{
-		$this->load->model('usermodel');
+		if ( empty($username) ) {
+			$this->load->model('usermodel');
 
-		$user = array(	'username' => $this->input->post('username'),
-						'password' => $this->input->post('password')	
-					);
+			$user = array(	'username' => $this->input->post('username'),
+							'password' => $this->input->post('password')	
+						);
 
-		$result = $this->usermodel->get_user($user['username'], $user['password']);
+			$result = $this->usermodel->get_user($user['username'], $user['password']);
+		} else {
+			// The user just registered
+			$result = $this->usermodel->set_sessiondata($username, true);
+		}
 
-		$this->load->view('user_handling/login', array( 'result' => $result ) );
+		// Simple structure array for the view, read controllers/welcome.php
+      	$structs = array( 
+      					'header' => array('global/header'),
+      					'section_header' => array('global/master_nav_container', 'global/master_tile_slider'),
+      					'section_main' => array('welcome/welcome', 'global/login_container'),
+      					'footer' => array('global/footer')
+      				);
+
+		$this->load->view('struct/structure', array(
+													'structs' => $structs,
+													'sessiondata' => $this->session->all_userdata(),
+													'result' => $result
+													));
 	}
 
 	public function logout()
@@ -36,7 +53,18 @@ class User_handling extends CI_Controller {
 
 		$this->session->unset_userdata($userdata);
 
-		$this->load->view('user_handling/logout');
+		// Simple structure array for the view, read controllers/welcome.php
+      	$structs = array( 
+      					'header' => array('global/header'),
+      					'section_header' => array('global/master_nav_container', 'global/master_tile_slider'),
+      					'section_main' => array('welcome/welcome', 'global/login_container'),
+      					'footer' => array('global/footer')
+      				);
+
+		$this->load->view('struct/structure', array(
+													'structs' => $structs,
+													'sessiondata' => $this->session->all_userdata()
+													));
 	}
 
 	private function rand_string( $length ) {
@@ -64,17 +92,32 @@ class User_handling extends CI_Controller {
 		
 
 		if ($new_user['password'] !== $new_user['password_r']) {
-			$result = 'passwordwrong';
+			$result = $this->lang->line('alert_password_match');
 		} else {
+			//Success
 			$new_user['password'] = hash("sha512", hash("sha512", $new_user['password']) . $new_user['salt']);
 
 			$this->load->model('usermodel');
 
 			$result = $this->usermodel->create_user($new_user['username'], $new_user['email'], $new_user['password'], $new_user['salt']);
 
+			return $this->login( $new_user['username'] );
+
 		}
 
-		$this->load->view('user_handling/register', array('result' => $result));
+		// Simple structure array for the view, read controllers/welcome.php
+	    $structs = array( 
+      					'header' => array('global/header'),
+      					'section_header' => array('global/master_nav_container', 'global/master_tile_slider'),
+      					'section_main' => array('welcome/welcome', 'global/login_container'),
+      					'footer' => array('global/footer')
+      				);
+
+		$this->load->view('struct/structure', array(
+													'structs' => $structs,
+													'sessiondata' => $this->session->all_userdata(),
+													'result' => $result
+													));
 	}
 
 }

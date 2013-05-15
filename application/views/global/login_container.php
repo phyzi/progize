@@ -25,9 +25,14 @@
 		<div id="login_form_item_login" class="item">
 			<?php
 				echo form_open('user_handling/login');
-					echo form_input( array('type' => 'text', 'class' => 'input_text', 'name' => 'username', 'value' => 'username') );
-					echo form_input( array('type' => 'password', 'class' => 'input_text', 'name' => 'password') );
+					echo form_input( array('type' => 'text', 'class' => 'input_text', 'name' => 'username', 'value' => 'username', 'maxlength' => '20') );
+					echo form_input( array('type' => 'password', 'class' => 'input_text', 'name' => 'password', 'maxlength' => '16') );
 					echo form_submit('register', 'HAHAHAHAHAHA');
+
+					if (isset($result) && $result != '') {
+						echo $result;
+					}
+
 				echo form_close();
 			?>
 		</div>
@@ -38,11 +43,16 @@
 		<div id="login_form_item_register" class="item">
 			<?php
 				echo form_open('user_handling/register');
-					echo form_input( array('type' => 'text', 'class' => 'input_text', 'name' => 'username') );
-					echo form_input( array('type' => 'text', 'class' => 'input_text', 'name' => 'email') );
-					echo form_input( array('type' => 'password', 'class' => 'input_text', 'name' => 'password') );
-					echo form_input( array('type' => 'password', 'class' => 'input_text', 'name' => 'password_r') );
+					echo form_input( array('type' => 'text', 'class' => 'input_text', 'name' => 'username', 'maxlength' => '20') );
+					echo form_input( array('type' => 'text', 'class' => 'input_text', 'name' => 'email', 'maxlength' => '30') );
+					echo form_input( array('type' => 'password', 'class' => 'input_text', 'name' => 'password', 'maxlength' => '16') );
+					echo form_input( array('type' => 'password', 'class' => 'input_text', 'name' => 'password_r', 'maxlength' => '16') );
 					echo form_submit('register', 'HAHAHAHAHAHA');
+
+					if (isset($result) && $result != '') {
+						echo $result;
+					}
+					
 				echo form_close();
 			?>
 		</div>
